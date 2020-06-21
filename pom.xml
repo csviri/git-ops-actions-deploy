@@ -11,7 +11,7 @@
     <groupId>com.coderealms.gitopsactions</groupId>
     <artifactId>propagate-version</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>deploy</name>
+    <name>propagate-version</name>
     <description>GitOpsActions - Deploy</description>
 
     <properties>
