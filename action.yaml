@@ -19,7 +19,7 @@ inputs:
     required: true
     default: 'version'
   auto-approve-pr:
-    description: 'Propagation is done as a PR. Set if should be approved automatically'
+    description: 'Propagation is done as a Pull Request. Set if PR should be approved automatically.'
     required: true
     default: true
 outputs:

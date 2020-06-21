@@ -11,6 +11,7 @@ import java.io.IOException;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class GitHubServiceTest {
 
+//  TODO proper integration testing
     private GitHubService gitHubService;
 
     @BeforeAll
