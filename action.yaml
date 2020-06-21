@@ -1,11 +1,27 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  ops-repo-url:
+    description: 'The environment (branch) name to propagate version'
     required: true
-    default: 'World'
+  target-environment:  # id of input
+    description: 'The environment (branch) name to propagate version'
+    required: true
+    default: 'dev'
+  version:
+    description: 'The version string to propagate'
+    required: true
+  version-file-path:
+    description: 'The version string to propagate'
+    required: true
+    default: 'version'
+
 outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.ops-repo-url }}
+    - ${{ inputs.target-environment }}
+    - ${{ inputs.version }}
+    - ${{ inputs.version-file-path }}
