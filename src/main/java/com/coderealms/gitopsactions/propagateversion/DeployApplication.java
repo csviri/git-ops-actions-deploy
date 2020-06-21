@@ -1,4 +1,4 @@
-package com.coderealms.gitopsactions.deploy;
+package com.coderealms.gitopsactions.propagateversion;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeExceptionMapper;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.Arrays;
 
-import static com.coderealms.gitopsactions.deploy.ParamsUtils.toPropagationParams;
+import static com.coderealms.gitopsactions.propagateversion.ParamsUtils.toPropagationParams;
 
 @SpringBootApplication
 public class DeployApplication implements CommandLineRunner {
@@ -29,7 +29,6 @@ public class DeployApplication implements CommandLineRunner {
         PropagationParams propagationParams = toPropagationParams(args);
         propagationService.propagateVersion(propagationParams);
     }
-
 
     @Bean
     ExitCodeExceptionMapper exitCodeToExceptionMapper() {

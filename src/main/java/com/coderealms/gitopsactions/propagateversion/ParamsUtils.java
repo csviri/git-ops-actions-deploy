@@ -1,4 +1,4 @@
-package com.coderealms.gitopsactions.deploy;
+package com.coderealms.gitopsactions.propagateversion;
 
 public class ParamsUtils {
 

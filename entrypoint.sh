@@ -1,3 +1,3 @@
 #!/bin/sh
 
-java -jar /runnable/deploy-action.jar $*
+java -jar /runnable/propagate-version-action.jar $*

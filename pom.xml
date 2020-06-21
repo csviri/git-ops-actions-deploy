@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.coderealms.gitopsactions</groupId>
-    <artifactId>deploy</artifactId>
+    <artifactId>propagate-version</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>deploy</name>
     <description>GitOpsActions - Deploy</description>
@@ -43,7 +43,7 @@
     </dependencies>
 
     <build>
-        <finalName>deploy-action</finalName>
+        <finalName>propagate-version-action</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

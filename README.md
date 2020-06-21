@@ -1,4 +1,4 @@
-# git-ops-action-deploy
+# git-ops-action-propagate-version
 
 Project In Incubation Phase. Pls come back later :)
 

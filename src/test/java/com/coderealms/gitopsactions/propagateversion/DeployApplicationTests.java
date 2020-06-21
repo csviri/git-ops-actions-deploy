@@ -1,4 +1,4 @@
-package com.coderealms.gitopsactions.deploy;
+package com.coderealms.gitopsactions.propagateversion;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
