@@ -1,6 +1,5 @@
 # git-ops-action-propagate-version
 
-Project In Incubation Phase. Pls come back later :)
+This is an GitHub Action to propagate version of built artifact to an OpsRepo
 
-TODO: PR Branch Name param
-TODO: describe duilding with Integration tests
+For main docs see: https://github.com/csviri/git-ops-actions
