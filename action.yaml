@@ -1,5 +1,5 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'GitOpsActions - Deploy'
+description: 'Propagates version file to the ops repo'
 inputs:
   ops-repo-url:
     description: 'The environment (branch) name to propagate version'
