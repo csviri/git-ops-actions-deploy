@@ -18,6 +18,8 @@ public class DeployApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
         System.out.println(Arrays.toString(args));
+
+
     }
 
     @Bean

@@ -29,4 +29,4 @@ runs:
     - ${{ inputs.target-environment }}
     - ${{ inputs.version }}
     - ${{ inputs.version-file-path }}
-    - ${{ auto-approve-pr }}
+    - ${{ inputs.auto-approve-pr }}
