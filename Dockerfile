@@ -1,7 +1,7 @@
 FROM openjdk:11
 WORKDIR "~/build/"
 COPY . .
-RUN ./mvnw clean install
+RUN ./mvnw clean install -DskipTests
 
 FROM openjdk:11
 RUN mkdir "/runnable"
