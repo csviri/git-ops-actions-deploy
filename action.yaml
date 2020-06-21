@@ -15,13 +15,18 @@ inputs:
     description: 'The version string to propagate'
     required: true
     default: 'version'
+  auto-approve-pr:
+    description: 'Propagation is done as a PR. Set if should be approved automatically'
+    required: true
+    default: true
 
 outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.ops-repo-url }}
+    - ops-repo-ur=${{ inputs.ops-repo-url }}
     - ${{ inputs.target-environment }}
     - ${{ inputs.version }}
     - ${{ inputs.version-file-path }}
+    - ${{ auto-approve-pr }}
