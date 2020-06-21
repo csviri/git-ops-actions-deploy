@@ -1,10 +1,13 @@
-name: 'GitOpsActions - Deploy'
+name: 'GitOpsActions - Propagate Version'
 description: 'Propagates version file to the ops repo'
 inputs:
-  ops-repo-url:
-    description: 'The environment (branch) name to propagate version'
+  ops-repo:
+    description: 'repo identifier in form: [owner]/[repo-name]'
     required: true
-  target-environment:  # id of input
+  ops-repo-token:
+    description: 'Token to access ops repo'
+    required: true
+  target-environment:
     description: 'The environment (branch) name to propagate version'
     required: true
     default: 'dev'
@@ -12,21 +15,24 @@ inputs:
     description: 'The version string to propagate'
     required: true
   version-file-path:
-    description: 'The version string to propagate'
+    description: 'The version file path'
     required: true
     default: 'version'
   auto-approve-pr:
     description: 'Propagation is done as a PR. Set if should be approved automatically'
     required: true
     default: true
-
 outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ops-repo-ur=${{ inputs.ops-repo-url }}
-    - ${{ inputs.target-environment }}
-    - ${{ inputs.version }}
-    - ${{ inputs.version-file-path }}
-    - ${{ inputs.auto-approve-pr }}
+    - ops-repo=${{ inputs.ops-repo }}
+    - ops-repo-token=${{ inputs.ops-repo-token }}
+    - target-environment=${{ inputs.target-environment }}
+    - version=${{ inputs.version }}
+    - version-file-path=${{ inputs.version-file-path }}
+    - auto-approve-pr=${{ inputs.auto-approve-pr }}
+branding:
+  icon: 'git-pull-request'
+  color: 'blue'

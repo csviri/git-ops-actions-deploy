@@ -8,8 +8,16 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.Arrays;
 
+import static com.coderealms.gitopsactions.deploy.ParamsUtils.toPropagationParams;
+
 @SpringBootApplication
 public class DeployApplication implements CommandLineRunner {
+
+    private final PropagationService propagationService;
+
+    public DeployApplication(PropagationService propagationService) {
+        this.propagationService = propagationService;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(DeployApplication.class, args);
@@ -18,9 +26,10 @@ public class DeployApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
         System.out.println(Arrays.toString(args));
-
-
+        PropagationParams propagationParams = toPropagationParams(args);
+        propagationService.propagateVersion(propagationParams);
     }
+
 
     @Bean
     ExitCodeExceptionMapper exitCodeToExceptionMapper() {
